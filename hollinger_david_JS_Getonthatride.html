@@ -1,0 +1,85 @@
+<html>
+<head> 
+    <style type="text/css"> 
+        body{
+            background-color: antiquewhite;
+        }
+        .table {
+            width: 350px;
+            border: 1px;
+            margin: auto;
+            background-color: aqua;
+        }
+        .button{
+            margin: auto;
+        }
+        .sign{
+            text-align: center;
+            margin: auto;
+            color: blue;
+            background-color: yellow;
+            outline: auto;
+        }
+        .sign2{
+            text-align: center;
+            margin: auto;
+            color: black;
+            size: 5px;
+        }
+    </style>
+    <div class ='sign'>
+    <h1>
+        <p>
+            World's Best Amusement Park Ride!!!
+        </p>
+    </h1>
+    </div>
+    <div class="sign2">
+        <h6>
+            <p>
+                <b>
+                Must be taller than 52 inches and/or, older than 10 years old!
+                </b>
+            </p>
+        </h6>
+    </div>
+    <div class='table'><table border="1px"></div>
+        <tr>
+            <td>
+                <div style="text-align: center;"><input type="number" id="childHeight" placeholder="ex: 42"></td>
+            </tr>
+            <tr>
+                <td>Input Child Height(in inches) to see if they may ride</td>
+            </tr>
+            <tr>
+               <td><div style="text-align: center;"><input type="number" id="childAge" placeholder="ex: 10"></td>
+            </tr>
+            <tr>
+                <td>Input Child Age (in years) to see if they can ride</td>
+            </tr>
+        <tr>
+           <div class="test"> <td> <p id="test"></p> </td> </div>
+        </tr>
+    </table>
+    <div style="text-align: center;"><input type="button" onclick="calculate()" value="test"></div>
+
+<script>
+    function calculate(){
+        var childHeight = document.getElementById("childHeight").value; //Height in inches
+        var childAge = document.getElementById("childAge").value; //Age in years
+        if (childHeight >= 52 && childAge >= 10){
+            document.getElementById("test").innerHTML = "Get on that ride, kiddo!";
+        }
+        else if (childHeight <= 51 && childAge >= 10) {
+            document.getElementById("test").innerHTML = "You're lucky. You're old enough, but you are under the height limit. I'll Allow it!";
+        }
+        else if (childHeight >= 52 && childAge <= 9){
+            document.getElementById("test").innerHTML = "You're lucky. You're tall enough, but you are under the age limit. I'll Allow it!"
+        }
+        else if (childHeight <= 51 && childAge <= 9){
+            document.getElementById("test").innerHTML = "Sorry Kiddo. You're neither old enough, or tall enough to ride. Come back in 400 years!"
+        }
+    }
+</script>
+</head>
+</html>
